@@ -1,0 +1,38 @@
+1. 렌더 순서: z축 / Order in Layer
+2. 픽셀아트 조정: Pixel Unit - 도트 수만큼, Filter Mode - Point, compression - None
+3. 충돌 조정: Project Settings -> Physics 2D -> Default contact Setting 0.00001
+4. 아틀라스 자르기: sprite mode - multiple -> sprite editer의 slice - grid
+
+이동
+1. floor 마찰력 0
+2. player 공기저항(Linear Drag) 1이나 2 - 너무 크면 낙하에서도 영향을 받ㅇ므
+3. freeze rotation z 체크 - object가 회전하는 것을 막음
+4. move speed / max speed / stop speed 세가지를 코딩해줌
+- nomalized: 단위벡터를 구함
+
+애니메이션
+1. Flip: 스트라이프를 뒤집는 옵션 - 캐릭터 방향전환
+2. animator -> make transition 을 통해 다음 애니메이션을 지정
+3. Transition Duration 0초, Conditions 설정
+
+점프
+1. JumpPower / GravityScale을 통해 원하는 값 설정
+2. 바닥 감지 (OnCollisionEnter / RayCast)
+RayCast: Object를 검색하기 위해 빔을 쏘는 방식
+LayerMask: 물리 효과를 구분하는 정수값(tag와 비슷한 역할)
+
+타일 팔레트
+1. Tile Map Object 생성
+2. Tile Palette 폴더 생성
+3. Tile Palette에 원하는 Tile들 집어 넣기
+4. Tilemap Collider 2D 생성
+5. Layer와 Material 적용
+
+몬스터 이동
+1. 애니매이션 넣기
+2. rigidbody2D 변수 선언 및 초기화
+3. 행동 결정하기 - Random.Range()
+
+피격 이벤트
+1. Layer 설정
+2. Project Setting의 Enemy와 Enemy / Enemy와 PlayerDamaged 체그 해제()피격 시 무적)
